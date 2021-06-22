@@ -58,10 +58,10 @@
     form {
       input {
         height: 3.125rem;
-        border-radius: 8px;
+        border-radius: .5em;
         padding: 0 1em;
         background: #fff;
-        border: 1px solid #a8a8b3;
+        border: .0625em solid #a8a8b3;
       }
 
       button {
@@ -73,12 +73,28 @@
         width: 100%;
       }
     }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 3.5rem 0 1.5em;
+      font-family: 'Poppins', 'sans-serif'
+    }
+
+    p {
+      font-size: .875rem;
+      color: #737380;
+      margin-top: 1em;
+    
+      a {
+        color: #e559f9
+      }
+    }
   }
 
   .create-room {
     margin-top: 4em;
     height: 3.125rem;
-    border-radius: 8px;
+    border-radius: .5em;
     font-weight: 500;
     background: #ea4335;
     color: #fff;

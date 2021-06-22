@@ -1,11 +1,30 @@
+import { useHistory } from "react-router-dom"
+
+import { useAuth } from "../hooks/useAuth"
+
 import illustrationImg from "../assets/images/illustration.svg"
 import logoImg from "../assets/images/logo.svg"
 import googleIconImg from "../assets/images/google-icon.svg"
 
-import "../styles/auth.scss"
 import { Button } from "../components/Button"
 
+import "../styles/auth.scss"
+
 export function Home() {
+
+  // a const history é um HOOK do REACT e precisa ficar dentro do componente
+  // já que ela utiliza do contexto do mesmo, fora não funciona!
+  const history = useHistory()
+  const { user, signInWithGoogle } = useAuth()
+
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle()
+    }
+    history.push("/rooms/new")
+
+  }
+
   return (
     <div id="page-auth">
       <aside>
@@ -19,8 +38,7 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-
-          <Button className="create-room">
+          <Button onClick={ handleCreateRoom }className="create-room">
             <img src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
           </Button>
@@ -28,7 +46,7 @@ export function Home() {
 
           <form>
             <input type="text" placeholder="Digite o código da sala" />
-            <button type="submit">Entrar na sala</button>
+            <Button type="submit">Entrar na sala</Button>
           </form>
         </div>
       </main>
