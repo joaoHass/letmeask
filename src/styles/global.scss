@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-popins: "Poppins", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+  color: #29292e;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 400 1rem var(--ff-roboto);
+}
