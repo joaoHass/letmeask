@@ -1,8 +1,6 @@
 .button {
-
-  margin-top: 4em;
   height: 3.125rem;
-  border-radius: .5em;
+  border-radius: 0.5em;
   font-weight: 500;
   background: #835afd;
   color: #fff;
@@ -19,6 +17,12 @@
 
   img {
     margin-right: 0.5em;
+  }
+
+  &.outlined {
+    background: #fff;
+    border: 0.0625em solid #835afd;
+    color: #835afd;
   }
 
   &:not(:disabled):hover {
