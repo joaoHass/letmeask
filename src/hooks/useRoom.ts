@@ -43,6 +43,7 @@ export function useRoom(roomId: string) {
   useEffect(() => {
     const roomRef = database.ref(`/rooms/${roomId}`)
 
+    // monitora "value" de roomRef
     roomRef.on("value", (room) => {
       // retorna os valores da room
       const databaseRoom = room.val()
